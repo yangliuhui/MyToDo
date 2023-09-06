@@ -7,11 +7,20 @@ Window {
     visible: true
     title: qsTr("MyToDo")
 
-    Text {
-        id: txt
-        text: qsTr("MyToDo")
-        font.pixelSize: 20
+    Row {
         anchors.centerIn: parent
+        Text {
+            id: txt
+            text: qsTr("MyToDo")
+            font.pixelSize: 20
+        }
+
+        Button {
+            id: btn
+            onClicked: {
+                txt.text = qsTr("Clicked!")
+            }
+        }
     }
 
 }
