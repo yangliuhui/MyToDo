@@ -9,13 +9,15 @@ find_package(Qt6 6.4 REQUIRED COMPONENTS Quick)
 qt_standard_project_setup()
 
 qt_add_executable(appMyToDo
-    main.cpp
+    src/cpp/main.cpp
 )
 
 qt_add_qml_module(appMyToDo
     URI MyToDo
     VERSION 1.0
-    QML_FILES Main.qml
+    QML_FILES 
+        "src/qml/Main.qml"
+        "src/qml/core/RMoveArea.qml"
 )
 
 # Qt for iOS sets MACOSX_BUNDLE_GUI_IDENTIFIER automatically since Qt 6.1.
