@@ -18,6 +18,7 @@ qt_add_qml_module(appMyToDo
     QML_FILES 
         "src/qml/Main.qml"
         "src/qml/core/RMoveArea.qml"
+        "src/qml/core/RCircleButton.qml"
 )
 
 # Qt for iOS sets MACOSX_BUNDLE_GUI_IDENTIFIER automatically since Qt 6.1.
