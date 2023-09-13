@@ -3,9 +3,13 @@ import QtQuick.Controls
 import "../core"
 
 Item {
+    id: menuItem
+    signal btnCloseClicked()
+    signal btnMinClicked()
+    signal btnMaxClicked()
+
     Column {
         anchors.fill: parent
-
         Item {
             id: left_titleBar
             height: 40
@@ -23,8 +27,7 @@ Item {
                     height: 16
                     radius: 8
                     onButtonClick: {
-                        console.log("clicked btn_close")
-                        root.close()
+                        menuItem.btnCloseClicked()
                     }
                 }
 
@@ -34,7 +37,7 @@ Item {
                     height: 16
                     radius: 8
                     onButtonClick: {
-                        console.log("clicked btn_min")
+                        menuItem.btnMinClicked()
                     }
                 }
 
@@ -44,7 +47,7 @@ Item {
                     height: 16
                     radius: 8
                     onButtonClick: {
-                        console.log("clicked btn_max")
+                        menuItem.btnMaxClicked()
                     }
                 }
             }

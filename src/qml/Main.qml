@@ -4,6 +4,7 @@ import QtQuick.Controls
 import "core"
 import "menu"
 import "content"
+import MyToDoUiController 1.0
 
 Window {
     id: root
@@ -12,6 +13,10 @@ Window {
     visible: true
     flags: Qt.FramelessWindowHint
     color: "transparent"
+
+    MyToDoUiController {
+        id: myToDoUiController
+    }
 
     Rectangle {
         anchors.fill: parent
@@ -39,6 +44,22 @@ Window {
                 implicitWidth: 200
                 SplitView.maximumWidth: 400
                 SplitView.minimumWidth: 120
+                onBtnCloseClicked: {
+                    myToDoUiController.close()
+                    root.close()
+                }
+
+                onBtnMinClicked: {
+                    root.showMinimized()
+                }
+
+                onBtnMaxClicked: {
+                    if (root.visibility === Window.Maximized) {
+                        root.showNormal()
+                    } else {
+                        root.showMaximized()
+                    }
+                }
             }
 
             MainContent {
