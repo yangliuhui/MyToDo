@@ -11,12 +11,6 @@ qt_standard_project_setup()
 qt_add_executable(appMyToDo
     "src/cpp/main.cpp"
     "src/cpp/my_todo_ui_controller.cpp"
-    "src/cpp/macos.mm"
-)
-
-# 添加头文件
-set(HEADERS
-    macos.h
 )
 
 qt_add_qml_module(appMyToDo
@@ -45,19 +39,9 @@ target_link_libraries(appMyToDo
     PRIVATE Qt6::Quick
 )
 
-
-# 设置包含路径
-target_include_directories(appMyToDo PRIVATE
-    /System/Library/Frameworks/Foundation.framework/Versions/C/Headers
-    /System/Library/Frameworks/AppKit.framework/Headers
-    /System/Library/Frameworks/Cocoa.framework/Headers
-)
-
 include(GNUInstallDirs)
 install(TARGETS appMyToDo
     BUNDLE DESTINATION .
     LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
     RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}
 )
-
-

@@ -1,7 +1,6 @@
 #include <QGuiApplication>
 #include <QQmlApplicationEngine>
 #include "my_todo_ui_controller.h"
-#include "macos.h"
 
 int main(int argc, char *argv[])
 {
@@ -15,8 +14,6 @@ int main(int argc, char *argv[])
         &app, []() { QCoreApplication::exit(-1); },
         Qt::QueuedConnection);
     engine.load(url);
-
-    MacOS::removeTitlebarFromWindow();
 
     return app.exec();
 }
