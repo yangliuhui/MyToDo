@@ -4,7 +4,11 @@ project(MyToDo VERSION 0.1 LANGUAGES CXX)
 
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
+# 不加会导致qrc资源加载不出来
+set(CMAKE_AUTORCC ON)
+
 find_package(Qt6 6.4 REQUIRED COMPONENTS Quick)
+
 
 qt_standard_project_setup()
 
@@ -28,6 +32,8 @@ qt_add_qml_module(appMyToDo
         "src/qml/core/RCircleButton.qml"
         "src/qml/menu/MainMenu.qml"
         "src/qml/content/MainContent.qml"
+        "src/qml/menu/MainMenuItem.qml"
+        RESOURCES resource.qrc
 )
 
 # Qt for iOS sets MACOSX_BUNDLE_GUI_IDENTIFIER automatically since Qt 6.1.

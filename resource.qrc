@@ -1,0 +1,7 @@
+<RCC>
+    <qresource prefix="/">
+        <file>resource/menuItem_Normal.png</file>
+        <file>resource/menuItem_Normal@2x.png</file>
+        <file>resource/addTask.png</file>
+    </qresource>
+</RCC>
