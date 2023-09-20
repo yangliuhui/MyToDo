@@ -7,8 +7,8 @@ import MyToDoUiController 1.0
 
 Window {
     id: root
-    width: 640
-    height: 480
+    width: 800
+    height: 600
     visible: true
     color: "transparent"
 

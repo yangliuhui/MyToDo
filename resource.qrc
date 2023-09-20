@@ -3,5 +3,6 @@
         <file>resource/menuItem_Normal.png</file>
         <file>resource/menuItem_Normal@2x.png</file>
         <file>resource/addTask.png</file>
+        <file>resource/Fern-Mac_Normal@2x.png</file>
     </qresource>
 </RCC>

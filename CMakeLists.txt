@@ -7,8 +7,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 # 不加会导致qrc资源加载不出来
 set(CMAKE_AUTORCC ON)
 
-find_package(Qt6 6.4 REQUIRED COMPONENTS Quick)
-
+find_package(Qt6 6.4 REQUIRED COMPONENTS Quick QuickControls2)
 
 qt_standard_project_setup()
 
@@ -48,9 +47,10 @@ set_target_properties(appMyToDo PROPERTIES
 )
 
 target_link_libraries(appMyToDo
-    PRIVATE Qt6::Quick
+    PRIVATE
+        Qt6::Quick
+        Qt6::QuickControls2
 )
-
 
 # 设置包含路径
 target_include_directories(appMyToDo PRIVATE

@@ -2,11 +2,12 @@
 #include <QQmlApplicationEngine>
 #include "my_todo_ui_controller.h"
 #include "macos.h"
+#include <QQuickStyle>
 
 int main(int argc, char *argv[])
 {
     QGuiApplication app(argc, argv);
-
+    QQuickStyle::setStyle("Basic");
     QQmlApplicationEngine engine;
 
     qmlRegisterType<MyTodoUiController>("MyToDoUiController", 1, 0, "MyToDoUiController");
