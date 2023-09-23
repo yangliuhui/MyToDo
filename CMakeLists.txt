@@ -25,6 +25,8 @@ set(HEADERS
 qt_add_qml_module(appMyToDo
     URI MyToDo
     VERSION 1.0
+    RESOURCES
+        "resource.qrc"
     QML_FILES 
         "src/qml/Main.qml"
         "src/qml/core/RMoveArea.qml"
@@ -32,7 +34,8 @@ qt_add_qml_module(appMyToDo
         "src/qml/menu/MainMenu.qml"
         "src/qml/content/MainContent.qml"
         "src/qml/menu/MainMenuItem.qml"
-        RESOURCES resource.qrc
+        "src/qml/core/RCircularCheckBox.qml"
+
 )
 
 # Qt for iOS sets MACOSX_BUNDLE_GUI_IDENTIFIER automatically since Qt 6.1.

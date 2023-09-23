@@ -32,7 +32,7 @@ Window {
 
                 containmentMask: Item {
                     x: (handleDelegate.width - width) / 2
-                    width: 64
+                    width: 10
                     height: splitView.height
                 }
             }

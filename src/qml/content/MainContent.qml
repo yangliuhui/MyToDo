@@ -1,5 +1,7 @@
 import QtQuick 2.15
 import QtQuick.Controls
+import "../core"
+
 Item {
     id: contentItem
     Image {
@@ -51,11 +53,56 @@ Item {
 
             }
         }
-
-
-
-
     }
+
+    ScrollView {
+       anchors.top: contentTitle.bottom
+       anchors.topMargin: 50
+       anchors.bottom: addTask.top
+       anchors.bottomMargin: 30
+       anchors.left: parent.left
+       anchors.right: parent.right
+       anchors.leftMargin: 15
+       anchors.rightMargin: 15
+
+        ListView {
+            id: taskList
+            anchors.fill: parent
+            anchors.rightMargin: 12
+            spacing: 1
+            model: 50
+
+            delegate: Rectangle {
+                height: 33
+                width: taskList.width
+                color: "#ffffff"
+                radius: 3
+
+                RCircularCheckBox {
+                    id: taskListItemCheckBox
+                    anchors.left: parent.left
+                    anchors.leftMargin: 15
+                    anchors.verticalCenter: parent.verticalCenter
+                    width: 18
+                    height: 18
+
+                }
+
+                Text {
+                    id: taskListItemText
+                    text: "任务" + index
+                    height: parent.height
+                    anchors.left: taskListItemCheckBox.right
+                    anchors.leftMargin: 8
+                    anchors.verticalCenter: parent.verticalCenter
+                    verticalAlignment: Text.AlignVCenter
+                    font.pixelSize: 17
+                }
+            }
+
+        }
+    }
+
     Rectangle {
         id: addTask
         height: 38
